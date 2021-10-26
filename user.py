@@ -32,6 +32,11 @@ class User:
         print(f" User: {self.first_name} {self.last_name} ::: Balance: {self.account_balance}\n")
         return self
     
+    def transfer_money (self, other_user, amount):     # Method to transfer an amount from user to another user
+        self.make_withdrawal(amount)
+        other_user.make_deposit(amount)
+        return self
+    
     def update_user_info (self, first_name="John", last_name="Doe", account_balance=0):
         self.first_name = first_name
         self.last_name = last_name
@@ -98,3 +103,26 @@ print_desc("Withdrawing 200 from Brad Pitt")                 # make a withdrawal
 user[1].make_withdrawal(200)
 
 user[1].display_user_balance()
+
+user[2].display_user_balance()
+
+print_desc("The rock will make 3 deposits of 400 each")         # make 3 deposits
+for idx in range(3):
+    user[2].make_deposit(400)
+
+user[2].display_user_balance()
+
+print_desc("The rock will make a withdrawal of 500")            # make a withdrawal
+user[2].make_withdrawal(500)
+
+user[2].display_user_balance()
+
+# Bonus: have the first user transfer money to the third user and then print both users' balances
+
+print_desc("Bonus: have the first user transfer money to the third user and then print both users' balances")
+print_all_users_info(user)
+
+print_desc("Vin gives The Rock 300")
+user[0].transfer_money(user[2], 300)
+
+print_all_users_info(user)
