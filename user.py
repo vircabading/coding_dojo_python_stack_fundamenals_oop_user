@@ -12,15 +12,20 @@ class User:
         self.last_name = "Doe"
         self.account_balance = 0;
     
-    def make_withdrawal (self, amount):             # Method that decreases the user's account_balance by specified amount
+    def make_withdrawal (self, amount):                     # Method that decreases the user's account_balance by specified amount
         self.account_balance -= amount
         return self
     
-    def info(self):
-        print(f"{'::::: {self.first_name} {self.last_name} Information :::::':^60}")
+    def display_user_balance(self):
+        print(f"{' Balance Information ':*^80}")
+        print(f" User: {self.first_name} {self.last_name} ::: Balance: {self.account_balance}\n")
+        return self
+
+    def info(self):                                         # Method that displays info of class instance
+        print(f"{' {self.first_name} {self.last_name} Information ':*^80}")
         print(f"first_name : {self.first_name}")
         print(f"last_name : {self.last_name}")
-        print(f"account_balance: {self.account_balance}")
+        print(f"account_balance: {self.account_balance}\n")
         return self
 
 # //// MAIN EXECUTABLE SECTION ////////////////////////////
@@ -28,4 +33,4 @@ class User:
 Virgilio = User()
 Virgilio.info().account_balance = 1000
 Virgilio.info().make_withdrawal(200)
-Virgilio.info()
+Virgilio.display_user_balance()
