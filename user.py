@@ -63,10 +63,38 @@ user[0].make_deposit(100)
 
 user[0].display_user_balance()
 
+print_desc("Depositing 200 for Vin Diesel")                 # Make a deposit
+user[0].make_deposit(200)
+
+user[0].display_user_balance()
+
+print_desc("Depositing 500 for Vin Diesel")                 # Make a deposit
+user[0].make_deposit(500)
+
+user[0].display_user_balance()
+
 print_desc("Withdrawing 200 from Vin Diesel")               # Make a withdrawal
 user[0].make_withdrawal(200)
 
 
 user[0].display_user_balance()                              # Display updated user balance
+
+print_desc("Depositing 200 for Bradd Pitt")                 # Make a deposit
+user[1].make_deposit(200)
+
 user[1].display_user_balance()
 
+print_desc("Depositing 600 for Brad Pitt")
+user[1].make_deposit(600)
+
+user[1].display_user_balance()
+
+print_desc("Withdrawing 300 from Brad Pitt")                 # make a withdrawal
+user[1].make_withdrawal(300)
+
+user[1].display_user_balance()
+
+print_desc("Withdrawing 200 from Brad Pitt")                 # make a withdrawal
+user[1].make_withdrawal(200)
+
+user[1].display_user_balance()
