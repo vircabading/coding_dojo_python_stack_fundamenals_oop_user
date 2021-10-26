@@ -18,6 +18,10 @@ class User:
         self.first_name = "John"
         self.last_name = "Doe"
         self.account_balance = 0;
+
+    def make_deposit (self, amount=0):                      # Method that increases the user's account balance by amount
+        self.account_balance += amount
+        return self
     
     def make_withdrawal (self, amount):                     # Method that decreases the user's account_balance by specified amount
         self.account_balance -= amount
@@ -54,9 +58,14 @@ user[2].update_user_info("Dwayne", "Johnson", 1000)
 
 print_all_users_info(user)
 
+print_desc("Depositing 100 for Vin Diesel")                 # Make a deposit
+user[0].make_deposit(100)
+
+user[0].display_user_balance()
+
 print_desc("Withdrawing 200 from Vin Diesel")               # Make a withdrawal
-print(f"{f' Withdrawing 200 from Vin Diesel ':*^80}\n")     # Make a withdrawal
 user[0].make_withdrawal(200)
+
 
 user[0].display_user_balance()                              # Display updated user balance
 user[1].display_user_balance()
