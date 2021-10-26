@@ -107,15 +107,15 @@ user[1].display_user_balance()
 user[2].display_user_balance()
 
 print_desc("The rock will make 3 deposits of 400 each")         # make 3 deposits
-for idx in range(3):
-    user[2].make_deposit(400)
-
-user[2].display_user_balance()
-
 print_desc("The rock will make a withdrawal of 500")            # make a withdrawal
-user[2].make_withdrawal(500)
 
-user[2].display_user_balance()
+user[2].make_deposit(400).make_deposit(400).make_deposit(400).make_withdrawal(500).display_user_balance()
+
+# user[2].display_user_balance()
+
+# user[2].make_withdrawal(500)
+
+# user[2].display_user_balance()
 
 # Bonus: have the first user transfer money to the third user and then print both users' balances
 
